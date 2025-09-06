@@ -1,0 +1,283 @@
+/* Reset default margins and prevent overflow */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+    background: linear-gradient(135deg, #fffbe7, #fdfdfd);;
+}
+
+
+.navbar {
+  width: 100%;
+  background: linear-gradient(135deg, #ffffff, #f7d794);
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 60px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #2c3e50;
+}
+
+.logo span {
+  color: #d4af37;
+}
+
+.nav-links {
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links a {
+  color: #2c3e50;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  transition: 0.3s;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #d4af37;
+  left: 0;
+  bottom: -6px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #14532d;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  background: #2c3e50;
+  height: 3px;
+  width: 28px;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: linear-gradient(135deg, #ffffff, #f7d794);
+    position: absolute;
+    top: 90px;
+    right: 0;
+    width: 220px;
+    padding: 25px;
+    box-shadow: -2px 4px 10px rgba(0,0,0,0.15);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+
+
+
+
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 100px 20px;   /* increased height */
+  color: #2c3e50;
+}
+
+.hero h1 {
+  font-size: 56px;   /* bigger heading */
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.hero h1 span {
+  color: #d4af37; /* golden highlight */
+}
+
+.hero .tagline {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 25px;
+  color: #444;
+}
+
+.hero .desc {
+  font-size: 20px;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto 40px;
+  color: #555;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 15px 35px;
+  background: linear-gradient(135deg, #d4af37, #f7d794);
+  color: #2c3e50;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hero-btn:hover {
+  background: linear-gradient(135deg, #f7d794, #d4af37);
+  transform: scale(1.07);
+}
+
+
+.lost-section {
+  background: linear-gradient(135deg, #ffffff, #ffd700);
+  padding: 40px 20px;
+  text-align: center;
+  margin: 50px auto;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 1200px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+  /* Animation initial state */
+  opacity: 0;
+  transform: translateX(120px);
+  transition: all 0.8s ease-out 0.5s;
+}
+
+.lost-section.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.lost-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.lost-section img {
+  width: 220px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.lost-section p {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.lost-section button {
+  background: #222;
+  color: #ffd700;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.lost-section button:hover {
+  background: #000;
+  transform: scale(1.05);
+}
+
+
+
+
+.found-section {
+  background: linear-gradient(135deg, #ffd700, #ffffff);
+  padding: 40px 20px;
+  text-align: center;
+  margin: 80px auto;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 1200px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  /* Animation initial state (from LEFT) */
+  opacity: 0;
+  transform: translateX(-120px);
+  transition: all 0.8s ease-out 0.5s;
+}
+
+.found-section.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.found-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.found-section img {
+  width: 220px;
+  height: 220px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.found-section p {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.found-section button {
+  background: #222;
+  color: #ffd700;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.found-section button:hover {
+  background: #000;
+  transform: scale(1.05);
+}
+
+
