@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import foundImage from "../assets/find.jpg"; // <-- put an image in src/assets/
+import foundImage from "../assets/find.jpg"; 
 
 const FoundSection = () => {
   const [show, setShow] = useState(false);
@@ -9,7 +9,7 @@ const FoundSection = () => {
       const section = document.querySelector(".found-section");
       if (section) {
         const rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
+        if (rect.top < window.innerHeight - 30) {
           setShow(true);
         }
       }

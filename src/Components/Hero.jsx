@@ -14,7 +14,7 @@ const Hero = () => {
         Start searching today and help your friends and classmates
         recover what’s missing!
       </p>
-      <a href="#lost-section" className="hero-btn">Get Started</a>
+      <a href="#lost" className="hero-btn">Get Started</a>
     </section>
   );
 };

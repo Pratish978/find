@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import lostImage from "../assets/lost.jpg"; // <-- make sure this image is inside src/assets/
+import lostImage from "../assets/lost.jpg";
 
 const LostSection = () => {
   const [show, setShow] = useState(false);
@@ -9,7 +9,7 @@ const LostSection = () => {
       const section = document.querySelector(".lost-section");
       if (section) {
         const rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 50) {
+        if (rect.top < window.innerHeight - 30) {
           setShow(true);
         }
       }
